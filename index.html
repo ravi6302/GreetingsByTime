@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function GetTime(){
+            var now= new Date();
+            var time=now.toLocaleTimeString()
+            var msg =document.getElementById("para")
+            msg.innerHTML=time
+        }
+        function DisplayGreetings(){
+            var now=new Date();
+            var hrs =now.getHours();
+            if(hrs >=0 && hrs <=11){
+                alert("Hi Good Morning...!")
+            }
+            else if(hrs >=12 && hrs <=15){
+                alert("Hi Good Afternoon...!")
+            }
+            else if(hrs >=16 && hrs <=18){
+                alert("Hi Good Evening...!")
+            }
+            else if(hrs >=19 && hrs <=23){
+                alert("Hi Good Night...!")
+            }
+
+        }
+        function DodyLoad(){
+            setInterval(GetTime,1000)
+            DisplayGreetings()
+        }
+    </script>
+    <style>
+        .btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            margin-top:150px;
+            color: white;
+            background-color: rgb(99, 99, 231);
+            padding: 10px;
+            border-radius: 5px;
+            font-size:large;
+        }
+    </style>
+</head>
+<body>
+     <div class="btn">
+        <button onclick="DodyLoad()">Greet Me</button>
+     </div>
+</body>
+</html>
